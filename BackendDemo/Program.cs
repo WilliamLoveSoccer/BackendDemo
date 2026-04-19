@@ -10,7 +10,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IAlertRepository, AlertRepository>();
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IAlertManager, AlertManager>();
+builder.Services.AddScoped<IGroupManager, GroupManager>();
 
 var app = builder.Build();
 

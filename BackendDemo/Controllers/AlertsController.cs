@@ -40,7 +40,7 @@ public class AlertsController : ControllerBase
             var alert = await _manager.CreateAlertAsync(request);
             return CreatedAtAction(nameof(GetAlertStatus), new { id = alert.Id }, new { alert.Id, alert.Title, alert.CreatedAt, alert.CreatedBy });
         }
-        catch (ArgumentException ex)
+        catch (ApplicationException ex)
         {
             return BadRequest(new { error = ex.Message });
         }

@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="BackendDemo.csproj" />
+  <Project Path="..\BackendDemo.Tests\BackendDemo.Tests.csproj" />
 </Solution>

@@ -1,5 +1,4 @@
 using System.Linq.Expressions;
-using BackendDemo.DTOs;
 using BackendDemo.Models;
 
 namespace BackendDemo.Repositories;
@@ -22,11 +21,6 @@ public interface IAlertRepository
     Task AddAlertGroupsAsync(IEnumerable<AlertGroup> alertGroups);
 
     /// <summary>
-    /// Persists all pending changes to the database.
-    /// </summary>
-    Task SaveChangesAsync();
-
-    /// <summary>
     /// Determines whether an alert with the given ID exists.
     /// </summary>
     /// <param name="id">The alert ID to check.</param>
@@ -41,10 +35,10 @@ public interface IAlertRepository
     Task<ICollection<DeliveryLog>> GetDeliveryLogsAsync(Expression<Func<DeliveryLog, bool>> predicate);
 
     /// <summary>
-    /// Returns a paginated projection of alerts ordered by creation date descending.
+    /// Returns a paginated page of alerts ordered by creation date descending.
     /// </summary>
     /// <param name="page">1-based page number.</param>
     /// <param name="pageSize">Number of items per page.</param>
     /// <returns>A tuple of the page items and the total record count.</returns>
-    Task<(IEnumerable<AlertListItem> Items, int Total)> GetPagenatedAlertsAsync(int page, int pageSize);
+    Task<(IEnumerable<Alert> Items, int Total)> GetPagenatedAlertsAsync(int page, int pageSize);
 }
