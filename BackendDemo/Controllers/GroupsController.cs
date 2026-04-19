@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackendDemo.Controllers;
 
 [ApiController]
-[Route("groups")]
+[Route("v1/groups")]
 public class GroupsController : ControllerBase
 {
     #region Private Variables

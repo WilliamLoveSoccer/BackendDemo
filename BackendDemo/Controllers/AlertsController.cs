@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackendDemo.Controllers;
 
 [ApiController]
-[Route("alerts")]
+[Route("v1/alerts")]
 public class AlertsController : ControllerBase
 {
     #region Private Variables
